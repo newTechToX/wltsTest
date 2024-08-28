@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class LooksRareFixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         MakerOrder: [
@@ -29,7 +29,7 @@ export class LooksRareFixture extends Fixture {
       domain: {
         name: 'LooksRareExchange',
         version: '1',
-        chainId: '1',
+        chainId: chainId,
         verifyingContract: '0x59728544b08ab483533076417fbbb2fd0b17ce3a',
       },
       primaryType: 'MakerOrder',

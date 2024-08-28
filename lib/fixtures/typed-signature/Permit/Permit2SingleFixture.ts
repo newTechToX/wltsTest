@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class Permit2SingleFixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         PermitSingle: [
@@ -21,7 +21,7 @@ export class Permit2SingleFixture extends Fixture {
           { name: 'verifyingContract', type: 'address' },
         ],
       },
-      domain: { name: 'Permit2', chainId: '1', verifyingContract: '0x000000000022d473030f116ddee9f6b43ac78ba3' },
+      domain: { name: 'Permit2', chainId: chainId, verifyingContract: '0x000000000022d473030f116ddee9f6b43ac78ba3' },
       primaryType: 'PermitSingle',
       message: {
         details: {

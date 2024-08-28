@@ -2,7 +2,7 @@ import { Fixture } from '../../Fixture';
 
 // TODO: Update this once I find a real-world usage of this
 export class PermitForAllFixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         EIP712Domain: [
@@ -23,7 +23,7 @@ export class PermitForAllFixture extends Fixture {
         name: 'Lens',
         version: '2',
         verifyingContract: '0xDb46d1Dc155634FbC732f92E853b10B288AD5a1d',
-        chainId: 137,
+        chainId: chainId,  //original number: 137
       },
       primaryType: 'PermitForAll',
       message: {

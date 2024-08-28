@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class Seaport14Fixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         EIP712Domain: [
@@ -44,7 +44,7 @@ export class Seaport14Fixture extends Fixture {
       domain: {
         name: 'Seaport',
         version: '1.4',
-        chainId: '1',
+        chainId: chainId,
         verifyingContract: '0x00000000000001ad428e4906aE43D8F9852d0dD6',
       },
       message: {

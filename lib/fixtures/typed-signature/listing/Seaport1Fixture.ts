@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class Seaport1Fixture extends Fixture {
-  constructor(address: string, considerationOverride?: any[]) {
+  constructor(address: string, chainId: number, considerationOverride?: any[]) {
     const data = {
       types: {
         OrderComponents: [
@@ -42,7 +42,7 @@ export class Seaport1Fixture extends Fixture {
       domain: {
         name: 'Seaport',
         version: '1.1',
-        chainId: '1',
+        chainId: chainId,
         verifyingContract: '0x00000000006c3852cbef3e08e8df289169ede581',
       },
       primaryType: 'OrderComponents',

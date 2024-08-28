@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class PermitDecimalAddressFixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         EIP712Domain: [
@@ -22,7 +22,7 @@ export class PermitDecimalAddressFixture extends Fixture {
         name: 'USD Coin',
         version: '2',
         verifyingContract: '917551056842671309452305380979543736893630245704',
-        chainId: 1,
+        chainId: chainId,
       },
       primaryType: 'Permit',
       message: {

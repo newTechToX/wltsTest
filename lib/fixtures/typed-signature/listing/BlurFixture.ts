@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class BlurFixture extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         Order: [
@@ -34,7 +34,7 @@ export class BlurFixture extends Fixture {
       domain: {
         name: 'Blur Exchange',
         version: '1.0',
-        chainId: '1',
+        chainId: chainId,
         verifyingContract: '0x000000000000ad05ccc4f10045630fb830b95127',
       },
       primaryType: 'Order',

@@ -1,7 +1,7 @@
 import { Fixture } from '../../Fixture';
 
 export class NumericalAddr extends Fixture {
-  constructor(address: string) {
+  constructor(address: string, chainId: number) {
     const data = {
       types: {
         EIP712Domain: [
@@ -22,7 +22,7 @@ export class NumericalAddr extends Fixture {
         name: 'Dai Stablecoin',
         version: '1',
         verifyingContract: '611382286831621467233887798921843936019654057231',
-        chainId: 1,
+        chainId: chainId,
       },
       primaryType: 'Permit',
       message: {
