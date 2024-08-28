@@ -5,17 +5,18 @@ interface Props {
   setMethod: (method: Method) => void;
 }
 
-const methods = ['request', 'sendAsync', 'sendPromise', 'sendCallback', 'bypass', 'arrayBypass', 'coinbaseBypass'] as const;
+const methods = ['request', 'sendAsync', 'sendPromise'] as const
+//  'sendCallback', 'bypass', 'arrayBypass', 'coinbaseBypass'] as const;
 
 export const MethodToggle = ({ method, setMethod }: Props) => {
   const titles = {
     request: 'ethereum.request',
     sendAsync: 'ethereum.sendAsync',
     sendPromise: 'ethereum.send (promise)',
-    sendCallback: 'ethereum.send (callback)',
-    bypass: 'bypass (metamask)',
-    arrayBypass: 'array-bypass (metamask)',
-    coinbaseBypass: 'bypass (coinbase)',
+    // sendCallback: 'ethereum.send (callback)',
+    // bypass: 'bypass (metamask)',
+    // arrayBypass: 'array-bypass (metamask)',
+    // coinbaseBypass: 'bypass (coinbase)',
   };
 
   return (

@@ -1,4 +1,4 @@
-import { Fixture } from '../Fixture';
+import { Fixture } from '../../Fixture';
 
 export class Permit2SingleFixture extends Fixture {
   constructor(address: string) {

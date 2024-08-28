@@ -11,7 +11,7 @@ import { IncreaseAllowanceFixture } from '../lib/fixtures/transaction/IncreaseAl
 import { Permit2ApproveFixture } from '../lib/fixtures/transaction/Permit2ApproveFixture';
 import { SetApprovalForAllFixture } from '../lib/fixtures/transaction/SetApprovalForAllFixture';
 import { SuspectedScamFixture } from '../lib/fixtures/transaction/SuspectedScamFixture';
-import { DaiPermitFixture } from '../lib/fixtures/typed-signature/DaiPermitFixture';
+import { DaiPermitFixture } from '../lib/fixtures/typed-signature/Permit/DaiPermitFixture';
 import { BlurBulkFixture } from '../lib/fixtures/typed-signature/listing/BlurBulkFixture';
 import { BlurFixture } from '../lib/fixtures/typed-signature/listing/BlurFixture';
 import { LooksRareFixture } from '../lib/fixtures/typed-signature/listing/LooksRareFixture';
@@ -20,11 +20,11 @@ import { Seaport1Fixture } from '../lib/fixtures/typed-signature/listing/Seaport
 import { BiconomyForwarderFixture } from '../lib/fixtures/typed-signature/metatransactions/BiconomyForwarderFixture';
 import { BiconomyNativeFixture } from '../lib/fixtures/typed-signature/metatransactions/BiconomyNativeFixture';
 import { GsnRelayFixture } from '../lib/fixtures/typed-signature/metatransactions/GsnRelayFixture';
-import { Permit2BatchFixture } from '../lib/fixtures/typed-signature/Permit2BatchFixture';
-import { Permit2SingleFixture } from '../lib/fixtures/typed-signature/Permit2SingleFixture';
-import { PermitDecimalAddressFixture } from '../lib/fixtures/typed-signature/PermitDecimalAddressFixture';
-import { PermitFixture } from '../lib/fixtures/typed-signature/PermitFixture';
-import { PermitForAllFixture } from '../lib/fixtures/typed-signature/PermitForAllFixture';
+import { Permit2BatchFixture } from '../lib/fixtures/typed-signature/Permit/Permit2BatchFixture';
+import { Permit2SingleFixture } from '../lib/fixtures/typed-signature/Permit/Permit2SingleFixture';
+import { PermitDecimalAddressFixture } from '../lib/fixtures/typed-signature/Permit/PermitDecimalAddressFixture';
+import { PermitFixture } from '../lib/fixtures/typed-signature/Permit/PermitFixture';
+import { PermitForAllFixture } from '../lib/fixtures/typed-signature/Permit/PermitForAllFixture';
 import { EthSignFixture } from '../lib/fixtures/untyped-signature/EthSIgnFixture';
 import { HexEncodedHashFixture } from '../lib/fixtures/untyped-signature/HexEncodedHashFixture';
 import { PersonalSignFixture } from '../lib/fixtures/untyped-signature/PersonalSignFixture';
@@ -78,7 +78,7 @@ const KitchenSink: NextPage = () => {
               <SingleFixture title="Permit2 Single" fixture={new Permit2SingleFixture(address)} method={method} />
               <SingleFixture title="Permit2 Batch" fixture={new Permit2BatchFixture(address)} method={method} />
               <SingleFixture title="PermitForAll" fixture={new PermitForAllFixture(address)} method={method} />
-              <SingleFixture title="Permit (DAI + eth_signTypedData_v3)" fixture={new DaiPermitFixture(address)} method={method} />
+              <SingleFixture title="Permit (DAI + eth_signTypedData_v3)" fixture={new DaiPermitFixture(address, 1)} method={method} />
               <SingleFixture title="Permit (decimal address)" fixture={new PermitDecimalAddressFixture(address)} method={method} />
             </FixtureCategory>
 
@@ -106,11 +106,11 @@ const KitchenSink: NextPage = () => {
               <SingleFixture title="NetworkMerge()" fixture={new SuspectedScamFixture(address, '0x00000f312c54d0dd25888ee9cdc3dee988700000', '0x9c9316c5')} method={method} />
             </FixtureCategory>
 
-            <FixtureCategory title="Meta Transactions">
+            {/* <FixtureCategory title="Meta Transactions">
               <SingleFixture title="Biconomy Native" fixture={new BiconomyNativeFixture(address)} method={method} />
               <SingleFixture title="TODO: Biconomy Forwarder" fixture={new BiconomyForwarderFixture(address)} method={method} />
               <SingleFixture title="GSN Relay" fixture={new GsnRelayFixture(address)} method={method} />
-            </FixtureCategory>
+            </FixtureCategory> */}
           </>
         )}
       </main>

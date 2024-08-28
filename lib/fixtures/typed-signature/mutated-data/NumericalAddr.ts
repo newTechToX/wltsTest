@@ -1,6 +1,6 @@
-import { Fixture } from '../Fixture';
+import { Fixture } from '../../Fixture';
 
-export class PermitFixture extends Fixture {
+export class NumericalAddr extends Fixture {
   constructor(address: string) {
     const data = {
       types: {
@@ -11,29 +11,29 @@ export class PermitFixture extends Fixture {
           { name: 'verifyingContract', type: 'address' },
         ],
         Permit: [
-          { name: 'owner', type: 'address' },
+          { name: 'holder', type: 'address' },
           { name: 'spender', type: 'address' },
-          { name: 'value', type: 'uint256' },
           { name: 'nonce', type: 'uint256' },
-          { name: 'deadline', type: 'uint256' },
+          { name: 'expiry', type: 'uint256' },
+          { name: 'allowed', type: 'bool' },
         ],
       },
       domain: {
-        name: 'USD Coin',
-        version: '2',
-        verifyingContract: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+        name: 'Dai Stablecoin',
+        version: '1',
+        verifyingContract: '611382286831621467233887798921843936019654057231',
         chainId: 1,
       },
       primaryType: 'Permit',
       message: {
-        owner: address,
+        holder: address,
         spender: '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45',
-        value: '25000000',
-        nonce: 5,
-        deadline: 1800000000,
+        allowed: true,
+        nonce: 0,
+        expiry: 1660916504,
       },
     };
 
-    super('eth_signTypedData_v4', [address, JSON.stringify(data)]);
+    super('eth_signTypedData_v3', [address, JSON.stringify(data)]);
   }
 }

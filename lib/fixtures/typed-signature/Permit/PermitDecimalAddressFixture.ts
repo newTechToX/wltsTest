@@ -1,4 +1,4 @@
-import { Fixture } from '../Fixture';
+import { Fixture } from '../../Fixture';
 
 export class PermitDecimalAddressFixture extends Fixture {
   constructor(address: string) {

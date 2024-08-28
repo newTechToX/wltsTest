@@ -1,6 +1,6 @@
-import { Fixture } from '../Fixture';
+import { Fixture } from '../../Fixture';
 
-export class DaiPermitFixture extends Fixture {
+export class InconsistentChainID extends Fixture {
   constructor(address: string) {
     const data = {
       types: {
@@ -22,7 +22,7 @@ export class DaiPermitFixture extends Fixture {
         name: 'Dai Stablecoin',
         version: '1',
         verifyingContract: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-        chainId: 1,
+        chainId: 11110009,   // inconsistent chainID
       },
       primaryType: 'Permit',
       message: {

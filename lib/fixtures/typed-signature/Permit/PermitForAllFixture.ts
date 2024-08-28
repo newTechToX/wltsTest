@@ -1,4 +1,4 @@
-import { Fixture } from '../Fixture';
+import { Fixture } from '../../Fixture';
 
 // TODO: Update this once I find a real-world usage of this
 export class PermitForAllFixture extends Fixture {
