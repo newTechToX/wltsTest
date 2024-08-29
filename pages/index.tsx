@@ -60,8 +60,6 @@ const KitchenSink: NextPage = () => {
     setAddress(newAddress);
     setChain(newChain);
   };
-  console.log(setMethod);
-  console.log(method);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">
