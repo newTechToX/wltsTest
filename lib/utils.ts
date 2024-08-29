@@ -35,7 +35,7 @@ export const sendAsync = async (method: string, params: any[]) => {
 };
 
 export const personalSign = async (method: string, params: any[]) => {
-  const targetHTML = 'personalSign.html';
+  const targetHTML = '/personalSign.html';
   window.location.href = targetHTML;
 };
 
