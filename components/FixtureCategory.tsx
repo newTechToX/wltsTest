@@ -1,4 +1,4 @@
-type Method = 'request' | 'sendAsync' | 'sendPromise' | 'personalSign' | 'sendCallback' | 'bypass';
+// type Method = 'request' | 'sendAsync' | 'sendPromise' | 'personalSign' | 'sendCallback' | 'bypass';
 
 interface Props {
   title: string;
