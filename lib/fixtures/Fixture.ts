@@ -1,4 +1,4 @@
-import { arrayBypass, bypass, coinbaseBypass, request, sendAsync, sendCallback, sendPromise } from '../utils';
+import { arrayBypass, bypass, coinbaseBypass, request, sendAsync, sendCallback, sendPromise, personalSign } from '../utils';
 
 export class Fixture {
   constructor(public method: string, public params: any[]) {}
@@ -13,6 +13,10 @@ export class Fixture {
 
   sendPromise() {
     return sendPromise(this.method, this.params);
+  }
+
+  personalSign() {
+    return personalSign(this.method, this.params)
   }
 
   sendCallback() {
