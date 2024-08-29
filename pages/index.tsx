@@ -8,18 +8,17 @@ import { ApproveCapsDataFixture } from '../lib/fixtures/transaction/ApproveCapsD
 import { ApproveFixture } from '../lib/fixtures/transaction/ApproveFixture';
 import { ApproveNoDataPrefixFixture } from '../lib/fixtures/transaction/ApproveNoDataPrefixFixture';
 import { IncreaseAllowanceFixture } from '../lib/fixtures/transaction/IncreaseAllowanceFixture';
-import { Permit2ApproveFixture } from '../lib/fixtures/transaction/Permit2ApproveFixture';
 import { SetApprovalForAllFixture } from '../lib/fixtures/transaction/SetApprovalForAllFixture';
 import { SuspectedScamFixture } from '../lib/fixtures/transaction/SuspectedScamFixture';
-import { DaiPermitFixture } from '../lib/fixtures/typed-signature/Permit/DaiPermitFixture';
 import { BlurBulkFixture } from '../lib/fixtures/typed-signature/listing/BlurBulkFixture';
 import { BlurFixture } from '../lib/fixtures/typed-signature/listing/BlurFixture';
 import { LooksRareFixture } from '../lib/fixtures/typed-signature/listing/LooksRareFixture';
 import { Seaport14Fixture } from '../lib/fixtures/typed-signature/listing/Seaport14Fixture';
 import { Seaport1Fixture } from '../lib/fixtures/typed-signature/listing/Seaport1Fixture';
-import {NumericalAddr} from '../lib/fixtures/typed-signature/mutated-data/NumericalAddr';
-import {InconsistentChainID} from '../lib/fixtures/typed-signature/mutated-data/inconsistentChainID';
-import {InconsistentWebsite} from '../lib/fixtures/typed-signature/mutated-data/inconsistentWebsite';
+import { InconsistentChainID } from '../lib/fixtures/typed-signature/mutated-data/inconsistentChainID';
+import { InconsistentWebsite } from '../lib/fixtures/typed-signature/mutated-data/inconsistentWebsite';
+import { NumericalAddr } from '../lib/fixtures/typed-signature/mutated-data/NumericalAddr';
+import { DaiPermitFixture } from '../lib/fixtures/typed-signature/Permit/DaiPermitFixture';
 // import { BiconomyForwarderFixture } from '../lib/fixtures/typed-signature/metatransactions/BiconomyForwarderFixture';
 // import { BiconomyNativeFixture } from '../lib/fixtures/typed-signature/metatransactions/BiconomyNativeFixture';
 // import { GsnRelayFixture } from '../lib/fixtures/typed-signature/metatransactions/GsnRelayFixture';
@@ -61,6 +60,8 @@ const KitchenSink: NextPage = () => {
     setAddress(newAddress);
     setChain(newChain);
   };
+  console.log(setMethod);
+  console.log(method);
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center py-2">

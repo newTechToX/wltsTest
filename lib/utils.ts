@@ -37,7 +37,7 @@ export const sendAsync = async (method: string, params: any[]) => {
 };
 
 export const personalSign = async (method: string, params: any[]) => {
-  if (method != 'personalSign' || params.length < 2) {
+  if (method != 'personal_sign' || params.length < 2) {
     console.log('method should be personal_sign, and the length of params should be 2 or 3 (msg, account, password)');
     return;
   }
@@ -46,8 +46,8 @@ export const personalSign = async (method: string, params: any[]) => {
     if (params.length == 3) {
       password = params[2];
     }
-    const web3 = new Web3(window.ethereum);
-    const res = await web3.eth.personal.sign(params[0], params[1], password);
+    let web3 = new Web3(window.ethereum);
+    const res = await web3.eth.personal.sign(params[0], params[1], '');
     console.log(res);
   } catch (err) {
     console.log(err);
