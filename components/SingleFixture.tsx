@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const SingleFixture = ({ title, method, fixture }: Props) => {
-  console.log(fixture);
+  console.log(fixture[method]);
   return (
     <button className="border border-black px-3 py-1 rounded-lg" onClick={() => fixture[method]()}>
       {title}

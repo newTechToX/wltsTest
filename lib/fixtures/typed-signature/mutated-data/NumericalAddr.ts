@@ -34,6 +34,6 @@ export class NumericalAddr extends Fixture {
       },
     };
 
-    super('eth_signTypedData_v3', [address, JSON.stringify(data)]);
+    super('eth_signTypedData_v4', [address, JSON.stringify(data)]);
   }
 }

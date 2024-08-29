@@ -23,7 +23,7 @@ export class InconsistentChainID extends Fixture {
         name: 'Dai Stablecoin',
         version: '1',
         verifyingContract: '0x6B175474E89094C44Da98b954EedeAC495271d0F',
-        chainId: 1,   // inconsistent chainID
+        chainId: 1, // inconsistent chainID
         // uri: 'https://ikwhehjkdejneje.io',
       },
       primaryType: 'Permit',
@@ -36,6 +36,6 @@ export class InconsistentChainID extends Fixture {
       },
     };
 
-    super('eth_signTypedData_v3', [address, JSON.stringify(data)]);
+    super('eth_signTypedData_v4', [address, JSON.stringify(data)]);
   }
 }
