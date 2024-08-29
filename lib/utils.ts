@@ -39,7 +39,7 @@ export const sendAsync = async (method: string, params: any[]) => {
 };
 
 export const personalSign = async (method: string, params: any[]) => {
-  if ((method != "personal_sign") || (params.length < 2)){
+  if ((method != "personalSign") || (params.length < 2)){
     console.log("method should be personal_sign, and the length of params should be 2 or 3 (msg, account, password)");
     return;
   };
