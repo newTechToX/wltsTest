@@ -1,3 +1,4 @@
+import Web3 from 'web3';
 declare let window: Window & {
   ethereum: any;
 };
@@ -35,27 +36,22 @@ export const sendAsync = async (method: string, params: any[]) => {
 };
 
 export const personalSign = async (method: string, params: any[]) => {
-  const targetHTML = '/personalSign.html';
-  window.location.href = targetHTML;
+  if (method != 'personal_sign' || params.length < 2) {
+    console.log('method should be personal_sign, and the length of params should be 2 or 3 (msg, account, password)');
+    return;
+  }
+  try {
+    let password: string = 'test password';
+    if (params.length == 3) {
+      password = params[2];
+    }
+    let web3 = new Web3(window.ethereum);
+    const res = await web3.eth.personal.signTransaction(params[0], params[1]);
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
 };
-
-// export const personalSign = async (method: string, params: any[]) => {
-//   if (method != 'personal_sign' || params.length < 2) {
-//     console.log('method should be personal_sign, and the length of params should be 2 or 3 (msg, account, password)');
-//     return;
-//   }
-//   try {
-//     let password: string = 'test password';
-//     if (params.length == 3) {
-//       password = params[2];
-//     }
-//     let web3 = new Web3(window.ethereum);
-//     const res = await web3.eth.personal.sign(params[0], params[1]);
-//     console.log(res);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
 
 export const bypass = async (method: string, params: any[]) => {
   window.postMessage({
