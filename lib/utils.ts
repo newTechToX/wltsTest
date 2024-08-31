@@ -1,4 +1,3 @@
-import Web3 from 'web3';
 declare let window: Window & {
   ethereum: any;
 };
@@ -45,9 +44,10 @@ export const personalSign = async (method: string, params: any[]) => {
     if (params.length == 3) {
       password = params[2];
     }
-    let web3 = new Web3(window.ethereum);
-    const res = await web3.eth.personal.sign(params[0], params[1], '');
-    console.log(res);
+    window.location.href = '/personalSign.html'; // 跳转到personalSign.html
+    // let web3 = new Web3(window.ethereum);
+    // const res = await web3.eth.personal.sign(params[0], params[1], '');
+    // console.log(res);
   } catch (err) {
     console.log(err);
   }
